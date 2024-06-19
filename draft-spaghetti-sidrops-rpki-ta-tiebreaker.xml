@@ -71,9 +71,9 @@ version="3">
     <keyword>X.509</keyword>
 
     <abstract>
-      <t>
-	A Trust Anchor (TA) in the RPKI is represented by a self-signed X.509 Certification Authority (CA) certificate.
-        It is possible for Relying Parties (RP) to have acquired multiple different issuances of valid TA certificates from the same TA operator.
+    <t>
+        A Trust Anchor (TA) in the RPKI is represented by a self-signed X.509 Certification Authority (CA) certificate.
+        Over time, Relying Parties (RP) may have acquired multiple different issuances of valid TA certificates from the same TA operator.
         This document proposes a tiebreaking scheme to be used by RPs to select one TA certificate for certification path validation.
         This document updates RFC 8630.
       </t>
@@ -88,14 +88,15 @@ version="3">
         TA operators periodically reissue TA certificates to introduce changes to, for example, modify the set of IP Address Delegations and/or Autonomous System Identifier Delegations included in the <xref target="RFC3779"/> extension(s), the content of the Subject Information Access extension (<xref target="RFC5280" section="4.2.2.2"/>), and the certificate validity period (<xref target="RFC5280" section="4.1.2.5"/>).
       </t>
       <t>
-        Relying Parties periodically download purported current Trust Anchor certificates from remote locations and verify that the key of the self-signed certificate matches the key embedded in its associated Trust Anchor Locator <xref target="RFC8630"/>.
-        This means that Relying Parties have a choice between using a previously retrieved locally cached copy of the TA certificate and the newly-retrieved instance of the TA certificate.
+        Relying Parties periodically download Trust Anchor certificates from well-known, remote locations and verify that the key of the self-signed certificate matches the key embedded in its associated Trust Anchor Locator <xref target="RFC8630"/>.
+        This transfer may happen via an unauthenticated channel, and the certificate is verified by checking that it is signed by the public key in the TAL.
+        After retrieving a TA certificate Relying Parties have a choice between using a previously retrieved locally cached copy of the TA certificate and the newly-retrieved instance of the TA certificate.
       </t>
       <t>
-        In the past some Trust Anchor certificates were issued with egregious validity periods, in some cases up to a century.
-        Trust Anchor operators cannot revoke previously issued instances of TA certificates.
-        This means that an on-path adversary or caching network elements could present Relying Parties with an older instance of the TA certificate than the TA operator intended for Relying Parties to use.
-        This document proposes a tiebreaking scheme for Relying Parties to prefer the 'more recently' issued instance of the TA certificate using the notBefore date as an indicator and as second tiebreaker to prefer TA certificates with a shorter validity window. 
+        Some Trust Anchor certificates were issued with extended validity periods, in some cases up to a century.
+        Since TA certificates are the root, and thus have no CRL covering them, Trust Anchor operators cannot revoke previously issued TA certificates.
+        This means that an on-path adversary or caching network elements could present Relying Parties with an older instance of the TA certificate than the TA operator intends Relying Parties to use.
+        This document proposes a tiebreaking scheme for Relying Parties, preferring (1) the 'more recently' issued certificate, and (2) the certificate with the shortest validity period among certificates with equal notBefore.
       </t>
 
       <section anchor="reqs-lang">
@@ -172,12 +173,21 @@ version="3">
         </li>
       </ul>
     </section>
+    <section>
+      <name>Tiebreaker design</name>
+      <t>
+        The tiebreaker scheme in this document aims to create a partial order over TA certificates issued by the same TA.
+        The goal of this order is to, in all realistic scenarios, allow the TA to always issue a certificate that is preferred over any previous certificate.
+      </t>
+    </section>
 
     <section anchor="security">
       <name>Security Considerations</name>
       <t>
         When Relying Parties inadvertently use a different instance of the TA certificate than the TA operator intended for RPs to use, the certification path validation process will yield an unexpected outcome.
+        Some examples of unexpected outcomes are validation failures, or replay attacks.
         Standardization of a tiebreaking scheme helps both RP and TA operators arrive at deterministic outcomes.
+        The proposed tiebreaking scheme prevents RPs from accepting a previous certificate presented by an on-path attacker.
       </t>
     </section>
 
