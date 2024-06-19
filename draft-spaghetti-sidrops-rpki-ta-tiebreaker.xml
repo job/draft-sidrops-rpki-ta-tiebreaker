@@ -188,7 +188,7 @@ version="3">
         When Relying Parties inadvertently use a different instance of the TA certificate than the TA operator intended for RPs to use, the certification path validation process will yield an unexpected outcome.
         Some examples of unexpected outcomes are validation failures, or replay attacks.
         Standardization of a tiebreaking scheme helps both RP and TA operators arrive at deterministic outcomes.
-        The proposed tiebreaking scheme prevents RPs from accepting a previous certificate presented by an on-path adversary.
+        The proposed tiebreaking scheme prevents RPs from accepting a previous certificate presented by an on-path adversary in the presence of other TA certificate material.
       </t>
     </section>
 
