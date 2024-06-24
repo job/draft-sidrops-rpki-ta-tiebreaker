@@ -11,7 +11,7 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude" 
 category="std" 
-docName="draft-spaghetti-sidrops-rpki-ta-tiebreaker-00"
+docName="draft-spaghetti-sidrops-rpki-ta-tiebreaker-01"
 ipr="trust200902" 
 xml:lang="en" 
 sortRefs="true" 
@@ -166,8 +166,7 @@ version="3">
                 If the validity period of the retrieved object is longer, use the locally cached copy of the retrieved TA.
               </li>
               <li>
-                Perform other checks, as deemed appropriate (locally), to ensure that the RP is willing to accept the entity publishing this self-signed CA certificate to be a TA.
-                These tests apply to the validity of attestations made in the context of the RPKI relating to all resources described in the INR extension(s) of this certificate.
+                If the validity period is equal, and the newly-retrieved certificate differs from the cached copy, use the newly-retrieved certificate.
               </li>
             </ol>
           </blockquote>
@@ -256,15 +255,12 @@ version="3">
       </ul>
     </section>
 
-<!--
     <section anchor="acknowledgements" numbered="false">
       <name>Acknowledgements</name>
       <t>
-        The authors wish to thank <contact fullname="..."/>.
+        The authors wish to thank <contact fullname="Tim Bruijnzeels"/>
       </t>
     </section>
-
--->
 
   </back>
 </rfc>
