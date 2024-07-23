@@ -258,7 +258,8 @@ version="3">
     <section anchor="acknowledgements" numbered="false">
       <name>Acknowledgements</name>
       <t>
-        The authors wish to thank <contact fullname="Tim Bruijnzeels"/>
+        The authors wish to thank <contact fullname="Tim Bruijnzeels"/> and
+        <contact fullname="George Michaelson"/>.
       </t>
     </section>
 
