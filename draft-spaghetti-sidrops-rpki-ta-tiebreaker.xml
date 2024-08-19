@@ -176,7 +176,7 @@ version="3">
     <section>
       <name>Tiebreaker design</name>
       <t>
-        The tiebreaker scheme in this document aims to create a partial order over TA certificates issued by the same TA.
+        The tiebreaker scheme in this document aims to define a total order for TA certificates issued by the same TA.
         The goal of this order is to allow the TA to issue a certificate that is preferred over any previous certificate.
       </t>
     </section>
