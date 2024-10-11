@@ -33,7 +33,7 @@ jobs:
             xml2rfc -p output --text --html draft-spaghetti-sidrops-rpki-ta-tiebreaker.xml
 
       - name: Archive output
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: xml2rfc-output
           path: output/
