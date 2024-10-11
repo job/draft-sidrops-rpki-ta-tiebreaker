@@ -97,7 +97,10 @@ version="3">
         In the past, some Trust Anchor certificates were issued with unreasonably long validity periods, in some cases up to a century.
         Since TA certificates are the root, and thus have no CRL covering them, Trust Anchor operators cannot revoke previously issued TA certificates.
         This means that an on-path adversary or caching network element could present Relying Parties with an older instance of the TA certificate than the TA operator intends Relying Parties to use.
+      </t>
+      <t>
         This document proposes a tiebreaking scheme for Relying Parties, preferring (1) the 'more recently' issued certificate, and (2) the certificate with the shortest validity period among certificates with equal notBefore.
+        This establishes a partial order over TA certificates issued by the same TA, permitting the issuance of a certificate that is preferred over any previous certificate.
       </t>
 
       <section anchor="reqs-lang">
@@ -172,13 +175,6 @@ version="3">
           </blockquote>
         </li>
       </ul>
-    </section>
-    <section>
-      <name>Tiebreaker design</name>
-      <t>
-        The tiebreaker scheme in this document aims to define a total order for TA certificates issued by the same TA.
-        The goal of this order is to allow the TA to issue a certificate that is preferred over any previous certificate.
-      </t>
     </section>
 
     <section anchor="security">
