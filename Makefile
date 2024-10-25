@@ -1,4 +1,4 @@
-NAME=draft-spaghetti-sidrops-rpki-ta-tiebreaker
+NAME=draft-ietf-sidrops-rpki-ta-tiebreaker
 
 .PHONY: all
 all: drafts
