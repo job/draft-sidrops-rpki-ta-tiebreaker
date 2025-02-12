@@ -88,7 +88,7 @@ version="3">
         TA operators periodically reissue TA certificates to update the certificate's validity period (<xref target="RFC5280" section="4.1.2.5"/>), its Subject Information Access extension (<xref target="RFC5280" section="4.2.2.2"/>, or its internet number resources (<xref target="RFC3779"/>).
       </t>
       <t>
-        Relying Parties (RPs) periodically fetch TA certificates from well-known, remote online locations and verify that the key of the self-signed certificate matches the key embedded in its associated Trust Anchor Locator (TAL) <xref target="RFC8630"/>.
+        Relying Parties periodically fetch TA certificates from online locations and verify that the key of the self-signed certificate matches the key embedded in its associated Trust Anchor Locator (TAL) <xref target="RFC8630"/>.
         TA certificates may be transferred via unauthenticated channels: certificates are verified by checking their signature with the public key in the TAL.
         After retrieving a TA certificate Relying Parties have a choice between using a previously retrieved locally cached copy of the TA certificate and the newly-retrieved instance of the TA certificate.
       </t>
