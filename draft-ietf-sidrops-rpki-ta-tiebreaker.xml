@@ -90,7 +90,7 @@ version="3">
       <t>
         Relying Parties periodically fetch TA certificates from online locations and verify that the key of the self-signed certificate matches the key embedded in its associated Trust Anchor Locator (TAL) <xref target="RFC8630"/>.
         This transfer may happen via an unauthenticated channel, and the certificate is verified by checking that it is signed by the public key in the TAL.
-        After retrieving a TA certificate Relying Parties have a choice between using a previously retrieved locally cached copy of the TA certificate and the newly-retrieved instance of the TA certificate.
+        After retrieving a TA certificate Relying Parties have a choice between using a previously retrieved locally cached copy of the TA certificate and the newly-retrieved instance of the TA certificate, provided that both certificates are valid.
       </t>
       <t>
         Periodic reissuance of TA certificates is a way of ensuring that the RPKI remains healthy at its root by avoiding ossification and retaining agility, consequently RPs refetch the certificates to adopt changes in the TA's INR <xref target="RFC3779" sectionFormat="bare"/> and SIA <xref target="RFC5280" sectionFormat="bare"/> extensions.
