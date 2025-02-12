@@ -30,7 +30,7 @@ jobs:
           image: paulej/rfctools
           options: -v ${{ github.workspace }}:/rfc -v ${{ github.workspace }}/.cache-xml2rfc:/var/cache/xml2rfc -w /rfc
           run: |
-            xml2rfc -p output --text --html draft-spaghetti-sidrops-rpki-ta-tiebreaker.xml
+            xml2rfc -p output --text --html draft-ietf-sidrops-rpki-ta-tiebreaker.xml
 
       - name: Archive output
         uses: actions/upload-artifact@v4
