@@ -100,7 +100,7 @@ version="3">
       </t>
       <t>
         This document proposes a tiebreaking scheme for Relying Parties, preferring (1) the 'more recently' issued certificate, and (2) the certificate with the shortest validity period among certificates with equal notBefore.
-        This establishes a partial order over TA certificates issued by the same TA, permitting the issuance of a certificate that is preferred over any previous certificate.
+        This establishes a preorder over TA certificates issued by the same TA, permitting the issuance of a certificate that is preferred over any previous certificate.
       </t>
 
       <section anchor="reqs-lang">
