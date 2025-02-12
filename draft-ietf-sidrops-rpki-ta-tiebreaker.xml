@@ -89,7 +89,7 @@ version="3">
       </t>
       <t>
         Relying Parties periodically fetch TA certificates from online locations and verify that the key of the self-signed certificate matches the key embedded in its associated Trust Anchor Locator (TAL) <xref target="RFC8630"/>.
-        TA certificates may be transferred via unauthenticated channels: certificates are verified by checking their signature with the public key in the TAL.
+        This transfer may happen via an unauthenticated channel, and the certificate is verified by checking that it is signed by the public key in the TAL.
         After retrieving a TA certificate Relying Parties have a choice between using a previously retrieved locally cached copy of the TA certificate and the newly-retrieved instance of the TA certificate.
       </t>
       <t>
