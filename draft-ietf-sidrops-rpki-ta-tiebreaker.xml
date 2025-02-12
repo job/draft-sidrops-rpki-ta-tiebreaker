@@ -95,7 +95,7 @@ version="3">
       <t>
         Periodic reissuance of TA certificates is a way of ensuring that the RPKI remains healthy at its root by avoiding ossification and retaining agility, consequently RPs refetch the certificates to adopt changes in the TA's INR <xref target="RFC3779" sectionFormat="bare"/> and SIA <xref target="RFC5280" sectionFormat="bare"/> extensions.
         In the past, some TA certificates were issued with unreasonably long validity periods, in some cases up to a century.
-        As TA certificates are the root, and thus have no Certificate Revocation List (<xref target="RFC5280" sectionFormat="bare"/>) covering their own scope, TA operators cannot revoke previously issued TA certificates.
+        Since TA certificates are the root, and thus have no Certificate Revocation List (<xref target="RFC5280" sectionFormat="bare"/>) covering their own scope, TA operators cannot revoke previously issued TA certificates.
         This means that an on-path adversary or caching network element could present Relying Parties with an older instance of the TA certificate than the TA operator intends Relying Parties to use.
       </t>
       <t>
