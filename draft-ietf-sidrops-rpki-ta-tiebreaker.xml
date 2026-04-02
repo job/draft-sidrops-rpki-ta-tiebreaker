@@ -171,6 +171,7 @@ version="3">
               </li>
               <li>
                 If the validity period is equal, and the newly-retrieved certificate differs from the cached copy, use the newly-retrieved certificate.
+                In the unlikely event that this step is reached, it seems most likely that TA operators intend for RPs to use the certificate that is currently published.
               </li>
             </ol>
           </blockquote>
