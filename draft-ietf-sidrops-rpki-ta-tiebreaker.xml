@@ -275,9 +275,11 @@ version="3">
       <t>
         The authors wish to thank <contact fullname="Tim Bruijnzeels"/>,
         <contact fullname="George Michaelson"/>,
-        <contact fullname="Tom Harrison"/>,
-        and
-        <contact fullname="Russ Housley"/>.
+        <contact fullname="Tom Harrison"/>
+        <contact fullname="Russ Housley"/>,
+	and
+        <contact fullname="Mohamed Boucadair"/>
+        for their review and feedback.
       </t>
     </section>
 
