@@ -160,24 +160,24 @@ version="3">
                 If this step fails, use the locally cached copy of the TA referenced by the TAL previously retrieved.
               </li>
               <li>
-                Confirm that the retrieved object is a current, validly self-signed RPKI CA certificate that conforms to the profile as specified in <xref target="RFC6487"/>.
-                If this step fails, use the locally cached copy of the retrieved TA.
+                Confirm that the newly-retrieved object is a current, validly self-signed RPKI CA certificate that conforms to the profile as specified in <xref target="RFC6487"/>.
+                If this step fails, use the locally cached TA.
               </li>
               <li>
-                Confirm that the public key in the TAL matches the public key in the retrieved object.
-                If this step fails, use the locally cached copy of the retrieved TA.
+                Confirm that the public key in the TAL matches the public key in the newly-retrieved putative TA.
+                If this step fails, use the locally cached TA.
               </li>
               <li>
-                Check whether the retrieved object has a more recent notBefore than the locally cached copy of the retrieved TA.
-                If the notBefore of the retrieved object is less recent, use the locally cached copy of the retrieved TA.
+                Check whether the newly retrieved TA has a more recent <tt>notBefore</tt> than the locally cached TA.
+                If the <tt>notBefore</tt> of the newly-retrieved TA is less recent, use the locally cached TA.
               </li>
               <li>
-                If the notBefore dates are equal, check whether the retrieved object has a shorter validity period than the locally cached copy of the retrieved TA.
-                If the validity period of the retrieved object is longer, use the locally cached copy of the retrieved TA.
+                If the <tt>notBefore</tt> dates are equal, check whether the newly retrieved TA has a shorter validity period than the locally cached TA.
+                If the validity period of the newly-retrieved TA is longer, use the locally cached TA.
               </li>
               <li>
-                If the validity period is equal, and the newly-retrieved certificate differs from the cached copy, use the newly-retrieved certificate.
-                In the unlikely event that this step is reached, it seems most likely that TA operators intend for RPs to use the certificate that is currently published.
+                If the validity period is equal, and the newly-retrieved TA differs from the cached TA, use the newly-retrieved TA.
+                In the unlikely event that this step is reached, it seems most likely that the TA operator intended for RPs to use the TA that is currently published.
               </li>
             </ol>
           </blockquote>
@@ -277,8 +277,9 @@ version="3">
         <contact fullname="George Michaelson"/>,
         <contact fullname="Tom Harrison"/>
         <contact fullname="Russ Housley"/>,
+        <contact fullname="Mohamed Boucadair"/>,
 	and
-        <contact fullname="Mohamed Boucadair"/>
+        <contact fullname="Christer Holmberg"/>
         for their review and feedback.
       </t>
     </section>
