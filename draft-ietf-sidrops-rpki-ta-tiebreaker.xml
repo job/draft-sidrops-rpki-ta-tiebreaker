@@ -245,6 +245,52 @@ version="3">
 
     </references>
 
+    <section>
+      <name>Examples</name>
+      <t>
+        This section contains a number of examples to illustrate the tiebreaker scheme.
+      </t>
+      <t>
+        Given the following validity periods, RPs would use the locally cached certificate (B):
+      </t>
+      <artwork>
+<![CDATA[
+  Newly-retrieved Certificate (serial A):
+    notBefore 20260101T00:00:00Z, notAfter 20270101T00:00:00Z
+
+  Locally cached Certificate (serial B):
+    notBefore 20260102T00:00:00Z, notAfter 20270102T00:00:00Z
+]]>
+      </artwork>
+
+      <t>
+        Given the following validity periods, RPs would use the locally cached certificate (D):
+      </t>
+      <artwork>
+<![CDATA[
+  Newly-retrieved Certificate (serial C):
+    notBefore 20260101T00:00:00Z, notAfter 20360101T00:00:00Z
+
+  Locally cached Certificate (serial D):
+    notBefore 20260101T00:00:00Z, notAfter 20260201T00:00:00Z
+]]>
+      </artwork>
+
+      <t>
+        Given the following validity periods, RPs would use the newly-retrieved certificate (E):
+      </t>
+      <artwork>
+<![CDATA[
+  Newly-retrieved Certificate (serial E):
+    notBefore 20260101T00:00:00Z, notAfter 20270101T00:00:00Z
+
+  Locally cached Certificate (serial F):
+    notBefore 20260101T00:00:00Z, notAfter 20270101T00:00:00Z
+]]>
+      </artwork>
+
+    </section>
+
     <section removeInRFC="true">
       <name>Implementation status</name>
       <t>
