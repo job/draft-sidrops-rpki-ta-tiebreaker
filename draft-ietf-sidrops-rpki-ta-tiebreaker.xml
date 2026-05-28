@@ -255,6 +255,8 @@ version="3">
       </t>
       <artwork>
 <![CDATA[
+  Current time: 20260102T01:01:01Z
+
   Newly-retrieved Certificate (serial A):
     notBefore 20260101T00:00:00Z, notAfter 20270101T00:00:00Z
 
@@ -268,6 +270,8 @@ version="3">
       </t>
       <artwork>
 <![CDATA[
+  Current time: 20260101T01:01:01Z
+
   Newly-retrieved Certificate (serial C):
     notBefore 20260101T00:00:00Z, notAfter 20360101T00:00:00Z
 
@@ -281,6 +285,8 @@ version="3">
       </t>
       <artwork>
 <![CDATA[
+  Current time: 20260101T01:01:01Z
+
   Newly-retrieved Certificate (serial E):
     notBefore 20260101T00:00:00Z, notAfter 20270101T00:00:00Z
 
