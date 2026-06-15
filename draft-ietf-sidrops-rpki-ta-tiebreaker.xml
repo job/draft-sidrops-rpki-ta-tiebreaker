@@ -11,7 +11,7 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude" 
 category="std" 
-docName="draft-ietf-sidrops-rpki-ta-tiebreaker-05"
+docName="draft-ietf-sidrops-rpki-ta-tiebreaker-06"
 ipr="trust200902" 
 xml:lang="en" 
 sortRefs="true" 
@@ -152,7 +152,7 @@ version="3">
           <t>NEW</t>
           <blockquote>
             <t>
-              In order to use the TAL to retrieve and validate a (putative) TA, an RP <bcp14>SHOULD</bcp14>:
+              In order to use the TAL to retrieve and validate a (putative) TA, an RP <bcp14>MUST</bcp14>:
             </t>
             <ol>
               <li>
@@ -165,15 +165,18 @@ version="3">
               </li>
               <li>
                 Confirm that the public key in the TAL matches the public key in the newly-retrieved putative TA.
-                If this step fails, use the locally cached TA.
+                If the keys do not match, use the locally cached TA.
+                If the keys match and there is no locally cached TA, use the newly-retrieved TA.
               </li>
               <li>
-                Check whether the newly-retrieved TA has a more recent <tt>notBefore</tt> than the locally cached TA.
+                Compare whether the newly-retrieved TA has a more recent <tt>notBefore</tt> than the locally cached TA.
                 If the <tt>notBefore</tt> of the newly-retrieved TA is less recent, use the locally cached TA.
+                If the <tt>notBefore</tt> of the newly-retrieved TA is more recent, use the newly-retrieved TA.
               </li>
               <li>
-                If the <tt>notBefore</tt> dates are equal, check whether the newly-retrieved TA has a shorter validity period than the locally cached TA.
+                If the <tt>notBefore</tt> dates are equal, compare whether the newly-retrieved TA has a shorter validity period than the locally cached TA.
                 If the validity period of the newly-retrieved TA is longer, use the locally cached TA.
+                If the validity period of the newly-retrieved TA is shorter, use the newly-retrieved TA.
               </li>
               <li>
                 If the validity period is equal, and the newly-retrieved TA differs from the cached TA, use the newly-retrieved TA.
@@ -278,8 +281,9 @@ version="3">
         <contact fullname="Tom Harrison"/>
         <contact fullname="Russ Housley"/>,
         <contact fullname="Mohamed Boucadair"/>,
-	and
-        <contact fullname="Christer Holmberg"/>
+        <contact fullname="Christer Holmberg"/>,
+        and
+        <contact fullname="Mahesh Jethanandani"/>
         for their review and feedback.
       </t>
     </section>
