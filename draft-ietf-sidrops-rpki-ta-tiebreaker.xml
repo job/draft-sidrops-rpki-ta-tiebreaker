@@ -169,12 +169,12 @@ version="3">
                 If the keys match and there is no locally cached TA, use the newly-retrieved TA.
               </li>
               <li>
-                Compare whether the newly-retrieved TA has a more recent <tt>notBefore</tt> than the locally cached TA.
+                Check whether the newly-retrieved TA has a more recent <tt>notBefore</tt> than the locally cached TA.
                 If the <tt>notBefore</tt> of the newly-retrieved TA is less recent, use the locally cached TA.
                 If the <tt>notBefore</tt> of the newly-retrieved TA is more recent, use the newly-retrieved TA.
               </li>
               <li>
-                If the <tt>notBefore</tt> dates are equal, compare whether the newly-retrieved TA has a shorter validity period than the locally cached TA.
+                If the <tt>notBefore</tt> dates are equal, check whether the newly-retrieved TA has a shorter validity period than the locally cached TA.
                 If the validity period of the newly-retrieved TA is longer, use the locally cached TA.
                 If the validity period of the newly-retrieved TA is shorter, use the newly-retrieved TA.
               </li>
