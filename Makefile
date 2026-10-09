@@ -11,3 +11,6 @@ $(NAME).txt: $(NAME).xml
 
 clean:
 	rm -f *.html *.txt
+
+www: $(NAME).txt
+	cp $(NAME).html $(NAME).xml $(NAME).txt ~/Downloads/
